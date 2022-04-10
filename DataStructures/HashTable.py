@@ -16,6 +16,9 @@ class HashTable:
     def __getitem__(self, key):
         return self.arr[self.get_hash(key)]
 
+    def __delitem__(self, key):
+        self.arr[self.get_hash(key)] = None
+
     def print(self):
         print(self.arr);
 
@@ -29,6 +32,8 @@ if __name__ == "__main__":
     ht["c"] = 3
     ht["d"] = 4
     ht["e"] = 5
+
+    del ht["c"];
 
     print(ht["e"])
     print(ht["d"])
